@@ -1,5 +1,7 @@
 package controllers;
 
+import models.Client;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,6 +29,15 @@ public class SignUp extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Client client = new Client(
+				request.getParameter("prenom"),
+				request.getParameter("nom"),
+				request.getParameter("adresse"),
+				request.getParameter("email"),
+				request.getParameter("motDePasse")
+		);
+
+
 		
 	}
 

@@ -6,23 +6,17 @@ public class Client {
 	private String nom;
 	private String prenom;
 	private String adresse;
-	private int codePostal;
-	private String ville;
-	private int tel;
 	private String motPasse;
 	
 
 
-	public Client(String email, String nom, String prenom, String adresse, int codePostal, String ville, int tel,
-			String motPasse) {
+	public Client(String nom, String prenom, String adresse,String email,
+				  String motPasse) {
 		super();
 		this.email = email;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
-		this.codePostal = codePostal;
-		this.ville = ville;
-		this.tel = tel;
 		this.motPasse = motPasse;
 	}
 
@@ -64,30 +58,6 @@ public class Client {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
-	}
-
-	public int getCodePostal() {
-		return codePostal;
-	}
-
-	public void setCodePostal(int codePostal) {
-		this.codePostal = codePostal;
-	}
-
-	public String getVille() {
-		return ville;
-	}
-
-	public void setVille(String ville) {
-		this.ville = ville;
-	}
-
-	public int getTel() {
-		return tel;
-	}
-
-	public void setTel(int tel) {
-		this.tel = tel;
 	}
 
 	public String getMotPasse() {
