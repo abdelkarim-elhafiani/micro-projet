@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+<%@page import="models.Article"%>
+>>>>>>> 1c81b80f43891cca62dad8663ad9bb0f643e031c
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>

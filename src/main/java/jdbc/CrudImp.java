@@ -1,11 +1,11 @@
 package jdbc;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
+import models.Article;
+import models.Categorie;
 import models.Client;
 
 
@@ -43,6 +43,21 @@ public class CrudImp implements Crud{
 
 
 
+    }
+
+    @Override
+    public Article getArticleByNum(int num) throws SQLException {
+        Connexion cn = new Connexion();
+
+        Statement stm = cn.getStm();
+        String sql1 = "Select * from article where codeArticle="+num+";";
+        ResultSet result=stm.executeQuery(sql1);
+        if(result.next()){
+            return new Article(result.getInt("codeArticle"),result.getString("designation"),result.getInt("prix"),result.getInt("stock"),new Categorie(result.getString("categorie")),result.getString("photo"));
+        }
+        System.out.println("no article");
+
+        return null;
     }
 
 

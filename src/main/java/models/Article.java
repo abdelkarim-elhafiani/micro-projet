@@ -1,7 +1,7 @@
 package models;
 
 public class Article {
-	private String codeArticle;
+	private int codeArticle;
 	private String designation;
 	private float prix;
 	private int stock;
@@ -13,7 +13,7 @@ public class Article {
 	
 	
 	
-	public Article(String codeArticle, String designation, float prix, int stock, Categorie categorie, String photo) {
+	public Article(int codeArticle, String designation, float prix, int stock, Categorie categorie, String photo) {
 		super();
 		this.codeArticle = codeArticle;
 		this.designation = designation;
@@ -22,10 +22,10 @@ public class Article {
 		this.categorie = categorie;
 		this.photo = photo;
 	}
-	public String getCodeArticle() {
+	public int getCodeArticle() {
 		return codeArticle;
 	}
-	public void setCodeArticle(String codeArticle) {
+	public void setCodeArticle(int codeArticle) {
 		this.codeArticle = codeArticle;
 	}
 	public String getDesignation() {
