@@ -44,7 +44,7 @@
 </head>
 <body>
 
-	<form method="get">
+	<form action="sign-in" method="post">
 		<h1>Idetifiez-vous</h1>
 		Nom:
 		<input name="nom" type="text"><br>
