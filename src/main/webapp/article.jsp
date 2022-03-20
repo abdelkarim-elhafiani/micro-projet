@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<jsp:useBean id="article"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Article</title>
-		<style type="text/css">
+		<style>
 		
 			body{
 			background-color:#e5e8ff;
