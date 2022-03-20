@@ -1,6 +1,8 @@
 package jdbc;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
@@ -11,22 +13,37 @@ public class CrudImp implements Crud{
     @Override
     public int insertClient(Client c ) {
         Connexion cn = new Connexion();
-        Connection conn = cn.getConn();
+
         Statement stm = cn.getStm();
         int rt2 = 0;
         try {
-          
-                String sql = "USE microproject ";
-                int rt1 = stm.executeUpdate(sql);
-                String sql2 = "INSERT INTO client (nom,prenom,email,adresse,motPass) VALUES('"+ c.getNom() + "','" + c.getPrenom() + "','" + c.getEmail()+ "','" +c.getMotPasse()+"');";
+                String sql2 = "INSERT INTO client (nom,prenom,email,adresse,motPass) VALUES('"+ c.getNom() + "','" + c.getPrenom() + "','" + c.getEmail()+"','" +c.getAdresse()+ "','" +c.getMotPasse()+"');";
                 rt2 = stm.executeUpdate(sql2);
             
-            conn.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return rt2;
 
     }
+    @Override
+    public Client login(String nom, String password) throws SQLException {
+        Connexion cn = new Connexion();
+
+        Statement stm = cn.getStm();
+        String sql1 = "Select nom,motPass from client where  nom='"+nom+"' and motPass='"+password+"';";
+        ResultSet result=stm.executeQuery(sql1);
+        if(result.next()){
+            System.out.println("eala slamtek");
+        }
+        System.out.println("teste");
+
+        return null;
+
+
+
+    }
+
 
 }

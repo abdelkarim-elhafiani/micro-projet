@@ -44,12 +44,12 @@
 </head>
 <body>
 
-	<form method="get">
+	<form action="sign-in" method="post">
 		<h1>Idetifiez-vous</h1>
 		Nom:
 		<input name="nom" type="text"><br>
 		Password:
-		<input name="passowrd" type="password"><br>
+		<input name="password" type="password"><br>
 		<button class="btn" type="submit">login</button>
 	</form>
 	

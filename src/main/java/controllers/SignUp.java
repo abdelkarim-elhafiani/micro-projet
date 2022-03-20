@@ -1,5 +1,6 @@
 package controllers;
 
+import jdbc.CrudImp;
 import models.Client;
 
 import java.io.IOException;
@@ -8,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet(name="SignUp",value="/sign-up")
@@ -36,6 +37,11 @@ public class SignUp extends HttpServlet {
 				request.getParameter("email"),
 				request.getParameter("motDePasse")
 		);
+		CrudImp insertion=new CrudImp();
+		insertion.insertClient(client);
+		HttpSession session=request.getSession(true);
+		session.setAttribute("client",client);
+		request.getRequestDispatcher("./sign-in").forward(request, response);
 
 
 		

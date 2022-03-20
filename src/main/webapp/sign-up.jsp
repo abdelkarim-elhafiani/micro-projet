@@ -41,7 +41,7 @@
 </head>
 <body>
 	
-	<form  action="/sign-up" method="post">
+	<form  action="./sign-up" method="post">
 		<h1>Inscrivez-vous</h1>
 		Prenom:
 		<input type=text  name="prenom"><br>

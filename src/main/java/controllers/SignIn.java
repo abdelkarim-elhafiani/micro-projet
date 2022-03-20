@@ -1,6 +1,9 @@
 package controllers;
 
+import jdbc.CrudImp;
+
 import java.io.IOException;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,16 +19,20 @@ public class SignIn extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nom=request.getParameter("nom");
-		String password=request.getParameter("password");
 
-		request.getRequestDispatcher("sign-in.jsp").forward(request, response);
+		request.getRequestDispatcher("./sign-in").forward(request, response);
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
+		String nom=request.getParameter("nom");
+		String password=request.getParameter("password");
+		CrudImp login=new CrudImp();
+		try {
+			login.login(nom,password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
