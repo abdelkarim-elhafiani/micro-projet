@@ -1,4 +1,4 @@
-package model;
+package models;
 
 public class LignesCommande {
 	private String numCommande;
