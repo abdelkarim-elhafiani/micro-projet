@@ -49,7 +49,7 @@
 		Nom:
 		<input name="nom" type="text"><br>
 		Password:
-		<input name="motDePasse" type="password"><br>
+		<input name="passowrd" type="password"><br>
 		<button class="btn" type="submit">login</button>
 	</form>
 	

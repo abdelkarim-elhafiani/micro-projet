@@ -16,6 +16,8 @@ public class SignIn extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nom=request.getParameter("nom");
+		String password=request.getParameter("password");
 
 		request.getRequestDispatcher("sign-in.jsp").forward(request, response);
 	}
